@@ -9,7 +9,11 @@ import org.junit.Test;
 
 public class CounterTest {
 
-	@Test
+	/*
+	 * Test whether all Count Thread start at the same time
+	 */
+	
+	@Test	
 	public void testStartTheSameTime() {
 		int numberOfThreads = 3;
 		int i;
@@ -24,7 +28,7 @@ public class CounterTest {
 		try {
 			gate.await();
 		} catch (BrokenBarrierException | InterruptedException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 
@@ -34,7 +38,7 @@ public class CounterTest {
 				countThreadList[i].join();
 			}
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 

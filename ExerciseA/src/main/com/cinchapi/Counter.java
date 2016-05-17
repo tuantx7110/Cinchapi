@@ -5,7 +5,16 @@ import java.util.concurrent.CyclicBarrier;
 
 public class Counter {
 	public static int count = 0;
-
+	
+	/**
+     * Increase the global variable {@code count} by 1 and add new value to
+     * {@code counThread}. Return  {@code true} if {@code count} is increased.
+     * return {@code false} if {@code count} is reached 100.
+     * @param countThread the name of the source node
+     * @return {@code true} if {@code count} is increased.
+     * return {@code false} if {@code count} is reached 100.
+     */
+    
 	public synchronized static boolean increase(CountThread countThread) {
 		if (count < 100) {
 			count = count + 1;
@@ -33,8 +42,7 @@ public class Counter {
 		//Notify Threads to  start to count
 		try {
 			barrier.await();
-		} catch (BrokenBarrierException e) {
-			// TODO Auto-generated catch block
+		} catch (BrokenBarrierException e) {			
 			e.printStackTrace();
 		}
 		

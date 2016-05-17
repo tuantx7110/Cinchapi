@@ -40,6 +40,7 @@ public class DirectedAcyclicGraphTest {
 		assertEquals(true,graph.addEdge("5", "6"));
 		assertEquals("AddEdge fail when there is no directed path",true,graph.addEdge("2", "4"));
 		assertEquals("AddEdge fail when there is directed path",false,graph.addEdge("5", "1"));
+		assertEquals("AddEdge fail when there is directed path",false,graph.addEdge("6", "1"));
 		
 		
 		

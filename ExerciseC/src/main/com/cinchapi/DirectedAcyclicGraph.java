@@ -1,5 +1,7 @@
 package com.cinchapi;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -110,6 +112,22 @@ public class DirectedAcyclicGraph {
 
 		return false;
 
+	}
+	
+	public static void main(String args[])
+	{
+		DirectedAcyclicGraph graph=new DirectedAcyclicGraph();
+		assertEquals("AddEdge fail when there are not source and destination", true,graph.addEdge("1", "2"));
+		assertEquals("AddEdge fail when there is not destination but have existing source", true,graph.addEdge("2", "3"));
+		assertEquals("AddEdge fail when there is existing destination but have not source", true,graph.addEdge("6", "3"));
+		assertEquals(true,graph.addEdge("4", "6"));
+		assertEquals(true,graph.addEdge("4", "5"));
+		assertEquals(true,graph.addEdge("5", "6"));
+		assertEquals("AddEdge fail when there is no directed path",true,graph.addEdge("2", "4"));
+		assertEquals("AddEdge fail when there is directed path",false,graph.addEdge("5", "1"));
+		assertEquals("AddEdge fail when there is directed path",false,graph.addEdge("6", "1"));
+		
+		System.out.println("finish");
 	}
 
 }

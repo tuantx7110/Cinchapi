@@ -157,7 +157,7 @@ public class DirectArray {
 	public static void main(String args[]) {
 		long capacity = 10;
 		if (args.length > 0) {
-			capacity = Integer.parseInt(args[0]);
+			capacity = Integer.parseInt(args[args.length-1]);
 		}
 		long limit = capacity;
 		DirectArray array = new DirectArray(capacity);

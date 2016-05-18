@@ -9,7 +9,7 @@ import org.junit.Test;
 
 public class CounterTest {
 
-	/*
+	/**
 	 * Test whether all Count Thread start at the same time
 	 */
 	

@@ -5,8 +5,9 @@ import java.lang.reflect.Field;
 import sun.misc.Unsafe;
 
 /**
- * This class will use Unsafe tool to manage an array off heap
- * 
+ * This class will use Unsafe tool to manage an array off heap.
+ * This behaves similarry with ArratList in Java core.
+ *  
  *
  */
 public class DirectArray {
@@ -59,6 +60,8 @@ public class DirectArray {
 		long address = convert2Address(index);
 		unsafe.putLong(address, value);
 	}
+	
+	
 
 	/**
 	 * Return value at {@code }}index in the array
